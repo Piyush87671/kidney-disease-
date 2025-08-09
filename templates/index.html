@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chronic Kidney Disease Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>🧠 Chronic Kidney Disease Prediction System</h1>
+    <h3>Empower Your Kidney Health 🩺</h3>
+
+    <div class="tips">
+      <div class="tip">
+        <span>🧪 <strong>Early Testing</strong></span>
+        <p>Get your kidneys tested regularly if you have diabetes or high blood pressure.</p>
+      </div>
+      <div class="tip">
+        <span>💧 <strong>Stay Hydrated</strong></span>
+        <p>Drink 8–10 glasses of water daily to help your kidneys flush toxins.</p>
+      </div>
+      <div class="tip">
+        <span>🚭 <strong>No Smoking</strong></span>
+        <p>Quit smoking to reduce the progression of kidney disease and heart risk.</p>
+      </div>
+      <div class="tip">
+        <span>🥦 <strong>Healthy Diet</strong></span>
+        <p>Eat fruits, vegetables & reduce salt intake to keep your kidneys functioning well.</p>
+      </div>
+    </div>
+
+    <button onclick="window.location.href='/predict'">🔍 Predict Now</button>
+    <button onclick="window.location.href='/report'">📋 View Report</button>
+  </div>
+</body>
+</html>

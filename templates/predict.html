@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kidney Disease Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🩺 Kidney Disease Predictor</h1>
+    <h3>Check your kidney health in seconds</h3>
+
+    <form action="/submit" method="POST" class="predict-form">
+      <div class="form-grid">
+        {% for field in [
+          'age', 'blood_pressure', 'specific_gravity', 'albumin', 'sugar',
+          'red_blood_cells', 'pus_cell', 'pus_cell_clumps', 'bacteria',
+          'blood_glucose_random', 'blood_urea', 'serum_creatinine', 'sodium',
+          'potassium', 'hemoglobin', 'packed_cell_volume', 'white_blood_cell_count',
+          'red_blood_cell_count', 'hypertension', 'diabetes_mellitus',
+          'coronary_artery_disease', 'appetite', 'pedal_edema', 'anemia'] %}
+          
+          <input
+            type="text"
+            name="{{ field }}"
+            placeholder="{{ field.replace('_', ' ').capitalize() }}"
+            required
+          />
+
+        {% endfor %}
+      </div>
+
+      <button type="submit">🔍 Predict</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+      <strong>Prediction:</strong> {{ prediction }}
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>
